@@ -1,16 +1,59 @@
-# React + Vite
+# E-Commerce Website – Online Music Store (The Generics)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive online music store built with **React** and **Vite**. Users can browse albums and merchandise, open product details, add items to a cart and sign in. Authentication and data use **Firebase** through its **REST APIs**.
 
-Currently, two official plugins are available:
+**Live Demo:** https://the-generics-music-store.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Products with Add to Cart](screenshots/generics-merch.webp)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **11 pages** with React Router: Home, Store, Product Details, Cart, About, Contact, Movies, Login, Sign Up, Profile and Change Password
+- **6 products** in 2 categories: 4 albums and 2 merchandise items
+- Product list and product detail pages
+- Cart with quantity updates and total price, saved per user in **localStorage** so it survives page reloads
+- Notification when an item is added to or removed from the cart
+- **Sign up, login and change password** with Firebase Authentication (REST API)
+- **5 protected pages** (Products, Product Details, Cart, Profile, Change Password) for logged-in users only
+- Automatic logout when the login token expires
+- Cart and login state shared across the app using the **Context API**
+- Movies page that loads data from **Firebase Realtime Database**, with automatic retry if loading fails
+- Contact form that saves messages to Firebase Realtime Database
+- Custom 404 page
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React.js · JavaScript · Vite · Context API · React Router · React Bootstrap · Bootstrap · React Icons · Firebase Authentication (REST API) · Firebase Realtime Database
+
+## Screenshots
+
+| Store | Home |
+|---|---|
+| ![Store](screenshots/generics-store.webp) | ![Home](screenshots/generics-home.webp) |
+
+## Run Locally
+
+```bash
+git clone https://github.com/VinayYadav07/the-generics-music-store.git
+cd the-generics-music-store
+npm install
+```
+
+Create a `.env` file in the project root:
+
+```
+VITE_FIREBASE_API_KEY=your_firebase_web_api_key
+```
+
+Then start the app:
+
+```bash
+npm run dev
+```
+
+Open http://localhost:5173.
+
+## Author
+
+**Vinay Kumar Yadav** – Frontend Developer
+[Portfolio](https://portfolio-rho-red-54.vercel.app) · [LinkedIn](https://www.linkedin.com/in/vinay-yadav-593b53329) · [GitHub](https://github.com/VinayYadav07)
