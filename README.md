@@ -1,29 +1,38 @@
-# E-Commerce Website – Online Music Store (The Generics)
+# The Generics - Music Store (E-Commerce Website)
 
-A responsive online music store built with **React** and **Vite**. Users can browse albums and merchandise, open product details, add items to a cart and sign in. Authentication and data use **Firebase** through its **REST APIs**.
+This is my e-commerce website project made with React.
+In this website user can see music albums and merchandise, check product details, add products in cart and login.
 
-**Live Demo:** https://the-generics-music-store.vercel.app
+**Live Link:** https://the-generics-music-store.vercel.app
 
-![Products with Add to Cart](screenshots/generics-merch.webp)
+![Store page](screenshots/generics-merch.webp)
 
 ## Features
 
-- **11 pages** with React Router: Home, Store, Product Details, Cart, About, Contact, Movies, Login, Sign Up, Profile and Change Password
-- **6 products** in 2 categories: 4 albums and 2 merchandise items
-- Product list and product detail pages
-- Cart with quantity updates and total price, saved per user in **localStorage** so it survives page reloads
-- Notification when an item is added to or removed from the cart
-- **Sign up, login and change password** with Firebase Authentication (REST API)
-- **5 protected pages** (Products, Product Details, Cart, Profile, Change Password) for logged-in users only
-- Automatic logout when the login token expires
-- Cart and login state shared across the app using the **Context API**
-- Movies page that loads data from **Firebase Realtime Database**, with automatic retry if loading fails
-- Contact form that saves messages to Firebase Realtime Database
-- Custom 404 page
+- 11 pages using React Router (Home, Store, Product Details, Cart, About, Contact, Movies, Login, Sign Up, Profile, Change Password)
+- 6 products in 2 categories (4 albums and 2 merchandise)
+- Add to cart, increase or decrease quantity and see total price
+- Cart is saved in localStorage for every user, so cart is not lost after page refresh
+- Message shows when product is added or removed from cart
+- Sign up, login and change password using Firebase Authentication (REST API)
+- Some pages open only after login (Products, Product Details, Cart, Profile, Change Password)
+- User is logged out automatically when login time is over
+- Context API is used for cart and login data
+- Movies page gets data from Firebase Realtime Database
+- Contact form saves data in Firebase Realtime Database
+- 404 page for wrong URL
 
-## Tech Stack
+## Tech Used
 
-React.js · JavaScript · Vite · Context API · React Router · React Bootstrap · Bootstrap · React Icons · Firebase Authentication (REST API) · Firebase Realtime Database
+- React.js
+- JavaScript
+- Vite
+- Context API
+- React Router
+- React Bootstrap and Bootstrap
+- React Icons
+- Firebase Authentication (REST API)
+- Firebase Realtime Database
 
 ## Screenshots
 
@@ -31,29 +40,58 @@ React.js · JavaScript · Vite · Context API · React Router · React Bootstrap
 |---|---|
 | ![Store](screenshots/generics-store.webp) | ![Home](screenshots/generics-home.webp) |
 
-## Run Locally
+## What I Learned
+
+- How to use Context API to share data in many components
+- How to make protected routes in React Router
+- How login works with token and how to logout when token time is over
+- How to save data in localStorage and Firebase
+
+## Problems I Faced
+
+- In starting, cart was same for all users. I fixed it by saving cart with user email in localStorage.
+- User was staying logged in even after token time was over. I added a timer to logout the user.
+- Sometimes movies data was not loading. I added error message and it tries again after few seconds.
+
+## Future Plans
+
+- Add search and filter for products
+- Save cart in Firebase so it works on any device
+- Add order history page
+
+## How to Run
+
+1. Clone the project
 
 ```bash
 git clone https://github.com/VinayYadav07/the-generics-music-store.git
 cd the-generics-music-store
+```
+
+2. Install packages
+
+```bash
 npm install
 ```
 
-Create a `.env` file in the project root:
+3. Make a `.env` file in the main folder and add your Firebase key
 
 ```
-VITE_FIREBASE_API_KEY=your_firebase_web_api_key
+VITE_FIREBASE_API_KEY=your_firebase_api_key
 ```
 
-Then start the app:
+4. Start the project
 
 ```bash
 npm run dev
 ```
 
-Open http://localhost:5173.
+5. Open http://localhost:5173 in browser
 
-## Author
+## Made By
 
-**Vinay Kumar Yadav** – Frontend Developer
-[Portfolio](https://portfolio-rho-red-54.vercel.app) · [LinkedIn](https://www.linkedin.com/in/vinay-yadav-593b53329) · [GitHub](https://github.com/VinayYadav07)
+**Vinay Kumar Yadav**
+
+- Portfolio: https://portfolio-rho-red-54.vercel.app
+- LinkedIn: https://www.linkedin.com/in/vinay-yadav-593b53329
+- GitHub: https://github.com/VinayYadav07
